@@ -75,7 +75,7 @@ func (odb ObjectDB) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	case "GET":
 		odb.dataGet(rw, req)
 	default:
-		rw.WriteHeader(500)
+		rw.WriteHeader(405)
 		panic(fmt.Sprintf("Invalid Method: %s", req.Method))
 	}
 }
